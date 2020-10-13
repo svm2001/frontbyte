@@ -1,0 +1,219 @@
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+}
+.b-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+.b-header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 50%;
+    z-index: 3;
+}
+.b-container {
+    position: relative;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.b-header__menu a {
+    text-decoration: none;
+    color: black;
+}
+.header__burger {
+    display: none;
+}
+.b-header__body, .b-header__menu, .b-header__list, .b-header__lang {
+    display: flex;
+}
+.b-header__body {
+    position: relative;
+    z-index: 4;
+    height: 120px;
+    align-items: center;
+}
+.header__burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+}
+.header__burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+}
+.header__burger.active span {
+    transform: scale(0);
+}
+.b-header__list {
+    margin-right: 173px;
+}
+.b-header__logo {
+    margin: 0 120px 0 40px;
+    position: relative;
+    z-index: 5;
+}
+.b-header__logo-icon--mobile-dark, .b-header__logo-icon--mobile-light {
+    display: none;
+}
+.b-header__list li {
+    list-style: none;
+    margin-right: 47px;
+}
+.b-header__lang li {
+    list-style: none;
+    margin-right: 25px;
+}
+.b-header__link--nowrap {
+    white-space: nowrap;
+}
+.b-header__lang-link--active {
+    border: 1px solid #f4f4f7;
+    border-radius: 50%;
+    padding: 10px 11px 10px 12px;
+}
+
+@media (max-width: 1280px) {
+    .b-header__list {
+        margin-right: 110px;
+    }
+}
+@media (max-width: 1180px) {
+    .b-header__body {
+        max-width: 980px;
+        margin: 0 auto;
+    }
+    .b-header__logo {
+        margin: 0 60px 0 30px;
+    }
+    .b-header__logo-icon--mobile-dark, .b-header__logo-icon--mobile-light {
+        display: none;
+    }
+    .header__burger {
+        display: none;
+    }
+    .b-header__list li {
+        margin-right: 35px;
+    }
+}
+
+
+@media (max-width: 1070px) {
+    .b-header__body {
+        max-width: 830px;
+        margin: 0 auto;
+    }
+    .b-header__logo {
+        margin: 0 30px 0 0;
+    }
+    .b-header__list {
+        margin-right: 100px;
+    }
+    .b-header__list li {
+        margin-right: 25px;
+    }
+}
+@media (max-width: 980px) {
+    .b-header__list {
+        margin-right: 40px;
+    }
+    .b-header__logo {
+        margin: 0 30px 0 0;
+    }
+    .b-header__logo-icon--mobile-dark, .b-header__logo-icon--mobile-light {
+        display: none;
+    }
+}
+@media (max-width: 930px) {
+    .b-header__list {
+        margin-right: 20px;
+    }
+    .b-header__logo {
+        margin: 0 10px 0 0;
+    }
+    .b-header__list li {
+        margin-right: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .b-header__body {
+        height: 90px;
+        position: relative;
+        background-color: #2d2d42;
+    }
+    .header__burger {
+        display: block;
+        position: relative;
+        height: 20px;
+        width: 20px;
+        z-index: 3;
+        right: -60%;
+        top: -3%;
+    }
+    .header__burger span {
+        position: absolute;
+        background-color: white;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+        transition: all 0.3s ease 0s;
+    }
+    .header__burger:before, .header__burger:after {
+        content: "";
+        background-color: white;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .header__burger:before {
+        top: 0;
+    }
+    .header__burger:after {
+        bottom: 0;
+    }
+    .b-header__menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: -500%;
+        transition: all 0.5s ease 0s;
+    }
+    .b-header__menu.active {
+        top: 20%;
+        transition: all 0.5s ease 0s;
+    }
+    .b-header__logo-icon--mobile-dark {
+        transform: scale(0);
+    }
+    .b-header__logo-icon--desktop {
+        display: none;
+    }
+    .b-header__logo-icon--mobile-light {
+        display: block;
+        padding-left: 30px;
+    }
+    .b-header__list {
+        display: block;
+        position: relative;
+        left: -5%;
+    }
+    .b-header__lang {
+        padding: 0;
+        position: relative;
+        left: 18%;
+    }
+    .b-header__list li {
+        margin-bottom: 20px;
+    }
+}
